@@ -1,0 +1,7 @@
+		f = open("historyfile.py", "a")
+		f.write(input + '\n')
+		if "|" in input:
+			piptemp=input.split("|")
+                        cmd=piptemp[0].split()
+                        cmd.append("|")
+                        call(cmd)

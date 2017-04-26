@@ -1,0 +1,29 @@
+		f = open("historyfile.py", "a")
+		f.write(input + '\n')
+		if "|" in input:
+			piptemp=input.split("|")
+                        cmd=piptemp[0].split()
+                        cmd.append("|")
+                        call(cmd)
+			for i in range(1,len(piptemp)):
+				f1=open("copyofoutput.txt","r")
+				shutil.copyfile("commandoutput.txt","copyofoutput.txt")
+				cmd=piptemp[i].split()
+				cmd.append("<")
+				cmd.append("copyofoutput.txt")
+                                cmd.append("|")
+                                # print ("root or main ")
+				# print cmd
+				call(cmd)
+                        f2=open("commandoutput.txt","r")
+                        lines = f2.readlines()
+                        for l in lines:
+                           print(l)
+		else:
+			cmdList= input.split()
+			call(cmdList) 
+
+
+
+
+
